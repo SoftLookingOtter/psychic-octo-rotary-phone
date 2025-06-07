@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Miniräknare</title>
+  </head>
+  <body>
+    <main>
+      <h1>Calculator</h1>
+      <section class="calculator">
+        <button class="bsqrt op" disabled title="Square root">√x</button>
+        <button class="bsq op" disabled title="Squared">x^2</button>
+        <button class="bclear op">Clear</button>
+        <button class="badd op">+</button>
+        <button class="digit">7</button>
+        <button class="digit">8</button>
+        <button class="digit">9</button>
+        <button class="bsub op">-</button>
+        <button class="digit">4</button>
+        <button class="digit">5</button>
+        <button class="digit">6</button>
+        <button class="bmul op">*</button>
+        <button class="digit">1</button>
+        <button class="digit">2</button>
+        <button class="digit">3</button>
+        <button class="bdiv op">/</button>
+      </section>
+      <section class="output">
+        <p>
+          <span>Result:</span>
+          <code id="result"> 10 </code>
+        </p>
+        <p>
+          <span>You selected:</span>
+          <code id="input"> 2 </code>
+        </p>
+      </section>
+      <section>
+        <h2>History (level up)</h2>
+        <ol class="history">
+          <li><code>1 = 1</code></li>
+          <li><code>1 + = 1</code></li>
+          <li><code>1 + 4 = 5</code></li>
+          <li><code>1 + 4 * = 5</code></li>
+          <li><code>1 + 4 * 2 = 10</code></li>
+        </ol>
+      </section>
+      <section>
+        <h2>Instructions</h2>
+        <p>
+          Press a number to start. Then select an operator, then another number,
+          and so on. You must alternate between numbers and operators. The
+          calculator remembers the last result and applies the operator to a new
+          number.
+        </p>
+        <p>
+          The last result and whatever you selected should always be displayed.
+        </p>
+        <p>
+          The history list is updated every time you choose something. It
+          displays a string of all your commands, followed by the result so far.
+        </p>
+        <p>Feel free to add more functionality!</p>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
