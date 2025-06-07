@@ -81,31 +81,34 @@ opButtons.forEach((btn) => {
       lastOperator = null; // Nollställ senaste operator
       resultLine = []; // Nollställ resultatlinjen
       //historyList.innerHTML = ""; // Töm historiken
-      updateDisplay();
-      return;
+      updateDisplay(); // Uppdatera displayen
+      return; // Avsluta funktionen
     }
 
     // Förhindra att två operatorer trycks i rad
-    if (currentInput === "" && lastOperator !== null) return;
+    if (currentInput === "" && lastOperator !== null) return; // Om ingen aktuell inmatning finns och en operator redan är vald, gör ingenting
 
-    const num = parseFloat(currentInput);
+    const num = parseFloat(currentInput); // Konvertera aktuell inmatning till ett flyttal, dvs. ett decimaltal
 
     if (!isNaN(num)) {
+      // Om numret är ett giltigt tal ( not not a Number)
       if (lastOperator === null) {
-        result = num;
+        // Om ingen tidigare operator finns
+        result = num; // Sätt resultatet till det aktuella numret
       } else {
-        result = performOperation(result, num, lastOperator);
+        result = performOperation(result, num, lastOperator); // Annars, utför operationen med det aktuella resultatet, numret och den senaste operatorn
       }
-      resultLine.push(currentInput);
+      resultLine.push(currentInput); // Lägg till aktuell inmatning i resultatlinjen
     }
 
     if (["+", "-", "*", "/"].includes(op)) {
-      lastOperator = op;
-      resultLine.push(op);
+      // Om operatorn är en giltig operator
+      lastOperator = op; // Sätt den senaste operatorn till den aktuella operatorn
+      resultLine.push(op); // Lägg till operatorn i resultatlinjen
     }
 
-    updateHistory();
-    currentInput = "";
-    updateDisplay();
+    updateHistory(); // Uppdatera historiken med den senaste operationen
+    currentInput = ""; // Nollställ aktuell inmatning
+    updateDisplay(); // Uppdatera displayen med det nya resultatet
   });
 });
