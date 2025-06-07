@@ -32,7 +32,7 @@ function updateHistory() {
   const code = document.createElement("code");
   code.textContent = line;
   li.appendChild(code);
-  historyList.appendChild(li);
+  historyList.insertBefore(li, historyList.firstChild);
 }
 
 // Utför själva räkningen
